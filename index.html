@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,8 +8,6 @@
     <title>Our Memories</title>
 
     <style>
-      /* ================= RESET ================= */
-
       * {
         margin: 0;
         padding: 0;
@@ -77,11 +76,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-
         padding: clamp(50px, 8vw, 100px) clamp(20px, 7vw, 100px);
-
         gap: clamp(40px, 6vw, 80px);
-
         max-width: 1600px;
         margin: auto;
       }
@@ -124,7 +120,6 @@
       .friend {
         width: clamp(90px, 12vw, 190px);
         height: clamp(180px, 25vw, 330px);
-
         overflow: hidden;
         border-radius: clamp(12px, 2vw, 20px);
         transition: 0.4s;
@@ -200,10 +195,8 @@
       .gallery img {
         width: 100%;
         height: clamp(250px, 25vw, 350px);
-
         object-fit: cover;
         border-radius: clamp(12px, 2vw, 18px);
-
         transition: 0.4s;
       }
 
@@ -243,7 +236,6 @@
       .contact-message {
         max-width: 650px;
         margin: 0 auto 50px;
-
         color: #999;
         font-size: clamp(15px, 1.7vw, 18px);
         line-height: 1.8;
@@ -266,6 +258,8 @@
         border-radius: 18px;
 
         transition: 0.35s;
+
+        cursor: pointer;
       }
 
       .contact-card:hover {
@@ -301,7 +295,148 @@
         font-size: 13px;
       }
 
-      /* FOOTER MESSAGE */
+      /* ================= POPUP ================= */
+
+      .contact-popup {
+        position: fixed;
+        inset: 0;
+
+        display: none;
+        align-items: center;
+        justify-content: center;
+
+        background: rgba(0, 0, 0, 0.75);
+
+        z-index: 1000;
+
+        padding: 20px;
+      }
+
+      .contact-popup.active {
+        display: flex;
+      }
+
+      .popup-box {
+        width: min(400px, 100%);
+
+        background: #151515;
+        border: 1px solid #333;
+        border-radius: 22px;
+
+        padding: 35px 25px;
+
+        text-align: center;
+
+        position: relative;
+
+        animation: popup 0.25s ease;
+      }
+
+      @keyframes popup {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .popup-close {
+        position: absolute;
+        top: 15px;
+        right: 18px;
+
+        width: 32px;
+        height: 32px;
+
+        border: none;
+        border-radius: 50%;
+
+        background: #222;
+        color: #aaa;
+
+        font-size: 20px;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+      }
+
+      .popup-close:hover {
+        background: #333;
+        color: white;
+      }
+
+      .popup-icon {
+        width: 65px;
+        height: 65px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin: 0 auto 20px;
+
+        border-radius: 50%;
+
+        background: #222;
+
+        font-size: 25px;
+      }
+
+      .popup-box h3 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      .popup-label {
+        color: #777;
+        font-size: 13px;
+        margin-bottom: 7px;
+      }
+
+      .popup-phone {
+        display: inline-block;
+
+        color: white;
+        text-decoration: none;
+
+        font-size: 20px;
+        letter-spacing: 1px;
+
+        margin-bottom: 25px;
+      }
+
+      .popup-phone:hover {
+        color: #aaa;
+      }
+
+      .call-button {
+        display: inline-block;
+
+        padding: 12px 25px;
+
+        border-radius: 10px;
+
+        background: white;
+        color: black;
+
+        text-decoration: none;
+
+        font-weight: bold;
+
+        transition: 0.3s;
+      }
+
+      .call-button:hover {
+        background: #ddd;
+        transform: translateY(-2px);
+      }
+
+      /* FOOTER */
 
       .contact-footer {
         padding-top: 35px;
@@ -364,6 +499,7 @@
 
           overflow-x: auto;
           white-space: nowrap;
+
           padding-bottom: 3px;
         }
 
@@ -404,8 +540,6 @@
           height: 220px;
           border-radius: 12px;
         }
-
-        /* CONTACT */
 
         .contact-friends {
           grid-template-columns: 1fr 1fr;
@@ -487,17 +621,20 @@
     <nav class="navbar">
       <div class="logo">FRIENDS</div>
 
+      ```
       <div class="nav-links">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#memories">Memories</a>
         <a href="#contact">Contact</a>
       </div>
+      ```
     </nav>
 
     <!-- ================= HOME ================= -->
 
     <section class="hero" id="home">
+      ```
       <div class="hero-text">
         <span>Our Story</span>
 
@@ -525,11 +662,13 @@
           <img src="friend3.jpg" alt="Friend 3" />
         </div>
       </div>
+      ```
     </section>
 
     <!-- ================= ABOUT ================= -->
 
     <section class="about" id="about">
+      ```
       <div class="section-title">
         <h2>About Us</h2>
 
@@ -545,11 +684,13 @@
           بودن و از همین لحظه‌های ساده زندگی لذت بردن است.
         </p>
       </div>
+      ```
     </section>
 
     <!-- ================= MEMORIES ================= -->
 
     <section id="memories">
+      ```
       <div class="section-title">
         <h2>Our Memories</h2>
 
@@ -567,47 +708,66 @@
         <img src="memory7.JPG" alt="Memory 7" />
         <img src="memory8.jpg" alt="Memory 8" />
       </div>
+      ```
     </section>
 
     <!-- ================= CONTACT ================= -->
 
     <section class="contact" id="contact">
+      ```
       <div class="contact-container">
         <div class="contact-title">
           <h2>Stay Connected</h2>
 
-          <p>Because the best moments are better when shared.</p>
+          <p>Click a name to see their contact information.</p>
         </div>
 
         <p class="contact-message">
           Four friends. One friendship. Countless memories.
           <br />
+
           And hopefully, many more adventures to come.
         </p>
 
+        <!-- FRIEND CONTACT CARDS -->
+
         <div class="contact-friends">
-          <div class="contact-card">
+          <div
+            class="contact-card"
+            onclick="showContact('Sahil', '0778693960')"
+          >
             <div class="number">01</div>
+
             <h3>Sahil</h3>
-            <span>Friend</span>
+
+            <span>Click to view contact</span>
           </div>
 
-          <div class="contact-card">
+          <div
+            class="contact-card"
+            onclick="showContact('Elham', '0749798468')"
+          >
             <div class="number">02</div>
+
             <h3>Elham</h3>
-            <span>Friend</span>
+
+            <span>Click to view contact</span>
           </div>
 
-          <div class="contact-card">
+          <div class="contact-card" onclick="showContact('Safi', '0777584974')">
             <div class="number">03</div>
+
             <h3>Safi</h3>
-            <span>Friend</span>
+
+            <span>Click to view contact</span>
           </div>
 
-          <div class="contact-card">
+          <div class="contact-card" onclick="showContact('Musa', '0790041053')">
             <div class="number">04</div>
+
             <h3>Musa</h3>
-            <span>Friend</span>
+
+            <span>Click to view contact</span>
           </div>
         </div>
 
@@ -615,6 +775,69 @@
           Made with <span class="heart">♥</span> by Sahil, Elham, Safi & Musa
         </div>
       </div>
+      ```
     </section>
+
+    <!-- ================= CONTACT POPUP ================= -->
+
+    <div class="contact-popup" id="contactPopup" onclick="closeContact(event)">
+      ```
+      <div class="popup-box">
+        <button class="popup-close" onclick="closePopup()">×</button>
+
+        <div class="popup-icon">☎</div>
+
+        <h3 id="popupName">Name</h3>
+
+        <p class="popup-label">Phone Number</p>
+
+        <a id="popupPhone" class="popup-phone" href="#"> Number </a>
+
+        <br />
+
+        <a id="callButton" class="call-button" href="#"> Call </a>
+      </div>
+      ```
+    </div>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+      function showContact(name, phone) {
+        const popup = document.getElementById("contactPopup");
+
+        const popupName = document.getElementById("popupName");
+
+        const popupPhone = document.getElementById("popupPhone");
+
+        const callButton = document.getElementById("callButton");
+
+        popupName.textContent = name;
+
+        popupPhone.textContent = phone;
+
+        popupPhone.href = "tel:" + phone;
+
+        callButton.href = "tel:" + phone;
+
+        popup.classList.add("active");
+      }
+
+      function closePopup() {
+        document.getElementById("contactPopup").classList.remove("active");
+      }
+
+      function closeContact(event) {
+        if (event.target.id === "contactPopup") {
+          closePopup();
+        }
+      }
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          closePopup();
+        }
+      });
+    </script>
   </body>
 </html>
