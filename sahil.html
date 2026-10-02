@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Our Memories</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #0b0b0b;
+        color: white;
+      }
+
+      /* ================= NAVBAR ================= */
+
+      .navbar {
+        height: 75px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 7%;
+
+        background: #0b0b0b;
+        border-bottom: 1px solid #222;
+
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 30px;
+      }
+
+      .nav-links a {
+        color: #aaa;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: white;
+      }
+
+      /* ================= HERO ================= */
+
+      .hero {
+        min-height: calc(100vh - 75px);
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 70px 7%;
+        gap: 60px;
+      }
+
+      .hero-text {
+        max-width: 500px;
+      }
+
+      .hero-text span {
+        color: #888;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-size: 13px;
+      }
+
+      .hero-text h1 {
+        font-size: 70px;
+        line-height: 1;
+        margin: 20px 0;
+      }
+
+      .hero-text p {
+        color: #888;
+        font-size: 18px;
+        line-height: 1.6;
+      }
+
+      /* FRIEND IMAGES */
+
+      .friends {
+        width: 50%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        gap: 15px;
+      }
+
+      .friend {
+        width: 170px;
+        height: 300px;
+
+        overflow: hidden;
+        border-radius: 20px;
+
+        transition: 0.4s;
+      }
+
+      .friend:nth-child(2) {
+        height: 390px;
+      }
+
+      .friend:hover {
+        transform: translateY(-15px);
+      }
+
+      .friend img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* ================= SECTIONS ================= */
+
+      section:not(.hero) {
+        padding: 100px 7%;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h2 {
+        font-size: 45px;
+        margin-bottom: 10px;
+      }
+
+      .section-title p {
+        color: #777;
+      }
+
+      /* ================= ABOUT ================= */
+
+      .about {
+        background: #111;
+        text-align: center;
+      }
+
+      .about-content {
+        max-width: 700px;
+        margin: auto;
+      }
+
+      .about-content p {
+        color: #999;
+        font-size: 18px;
+        line-height: 1.8;
+      }
+
+      /* ================= GALLERY ================= */
+
+      .gallery {
+        display: grid;
+
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+        gap: 20px;
+      }
+
+      .gallery img {
+        width: 100%;
+        height: 300px;
+
+        object-fit: cover;
+
+        border-radius: 18px;
+
+        transition: 0.4s;
+      }
+
+      .gallery img:hover {
+        transform: scale(1.03);
+      }
+
+      /* ================= CONTACT ================= */
+
+      .contact {
+        text-align: center;
+        background: #111;
+      }
+
+      .contact p {
+        color: #888;
+        margin-top: 15px;
+      }
+
+      /* ================= MOBILE ================= */
+
+      @media (max-width: 800px) {
+        .nav-links {
+          gap: 12px;
+        }
+
+        .nav-links a {
+          font-size: 13px;
+        }
+
+        .hero {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .friends {
+          width: 100%;
+        }
+
+        .friend {
+          width: 30%;
+        }
+
+        .hero-text h1 {
+          font-size: 50px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+      <div class="logo">FRIENDS</div>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#memories">Memories</a>
+
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <!-- ================= HOME ================= -->
+
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <span>Our Story</span>
+
+        <h1>
+          Good times.<br />
+          Great friends.
+        </h1>
+
+        <p>
+          A collection of our favorite moments, adventures and memories
+          together.
+        </p>
+      </div>
+
+      <div class="friends">
+        <div class="friend">
+          <img src="friend1.jpg" alt="Friend 1" />
+        </div>
+
+        <div class="friend">
+          <img src="friend2.jpg" alt="Friend 2" />
+        </div>
+
+        <div class="friend">
+          <img src="friend3.jpg" alt="Friend 3" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about" id="about">
+      <div class="section-title">
+        <h2>About Us</h2>
+
+        <p>The people behind the memories.</p>
+      </div>
+
+      <div class="about-content">
+        <p>
+          We are a group of friends who have shared countless adventures, jokes,
+          late nights, trips and unforgettable moments. This website is a place
+          to keep those memories alive.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= MEMORIES ================= -->
+
+    <section id="memories">
+      <div class="section-title">
+        <h2>Our Memories</h2>
+
+        <p>A gallery of our favorite moments.</p>
+      </div>
+
+      <div class="gallery">
+        <img src="friend1.jpg" alt="Memory 1" />
+
+        <img src="friend2.jpg" alt="Memory 2" />
+
+        <img src="friend3.jpg" alt="Memory 3" />
+
+        <img src="memory4.jpg" alt="Memory 4" />
+
+        <img src="memory5.jpg" alt="Memory 5" />
+
+        <img src="memory6.jpg" alt="Memory 6" />
+
+        <img src="memory7.jpg" alt="Memory 7" />
+
+        <img src="memory8.jpg" alt="Memory 8" />
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="contact" id="contact">
+      <div class="section-title">
+        <h2>Contact</h2>
+
+        <p>Made with ❤️ by friends.</p>
+      </div>
+    </section>
+  </body>
+</html>
